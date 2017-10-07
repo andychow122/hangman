@@ -2,19 +2,80 @@
 <html>
 <head>
 	<title>hangman...</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
 
-	<script type="text/javascript">
+	<!-- whole container -->
+	<div class="container">
+		<div class="jumbotron textj jumbo">
+			<h1>Hangman Bebop</h1>
+			<h2>instructions:</h2>
+			<h4>Type any letter to start! <br> 
+				If you guess correctly, the letter will be added to the word, <br>
+				if not, you will receive 1 strike! <br>
+				9 strikes and you're out!</h4>
+		</div>
+	
+	<!-- guess panel -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">GUESS</h3>
+			</div>
+			<div class="panel-body">
+				<h3 id="wordToGuess"></h3>
+			</div>
+		</div>
+	
+	<!-- wrong letters guessed -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Wrong Guesses</h3>
+			</div>
+			<div class="panel-body">
+				<span id="wrongGuesses"></span>
+			</div>
+		</div>
 
-		// choosing a word at random
-		var words = ["pizza", "potato", "science", "sweater"];
+	<!-- strikes -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Strikes</h3>
+			</div>
+			<div class="panel-body">
+				<span id="strikes"></span>
+			</div>
+		</div>
+	
+	<!-- wins -->
+		<div class="panel panel-default col-md-3">
+			<div class="panel-body">
+				<b>Wins</b>: <span id="winCounter"></span>
+			</div>
+		</div>
 
-		var randomWord = words[Math.floor(Math.random()*words.length)];;
+	<!-- losses -->
+		<div class="panel panel-default col-md-3">
+			<div class="panel-body">
+				<b>Losses</b>: <span id="lossCounter"></span>
+			</div>
+		</div>
 
-		var word = randomWord;
+	</div>
+	
+	<!-- link to JS -->
+	<script src="assets/javascript/game.js"></script>
 
-	</script>
 
 </body>
 </html>
